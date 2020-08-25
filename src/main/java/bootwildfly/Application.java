@@ -19,5 +19,12 @@ public class Application extends SpringBootServletInitializer {
     protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
         return application.sources(Application.class);
     }
+    @Bean
+    public EmbeddedServletContainerFactory servletContainer() {
+        TomcatEmbeddedServletContainerFactory factory = 
+                      new TomcatEmbeddedServletContainerFactory();
+        return factory;
+ }
+    
 }
 
